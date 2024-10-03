@@ -8,6 +8,8 @@ import { useRef } from "react";
 import state from "./components/state";
 import { useInView } from "react-intersection-observer";
 import Footer from "./components/Footer";
+import Menu from "./components/Menu";
+
 
   const Model = ({ modelPath }) => {
     const gltf = useGLTF(modelPath, true);
@@ -55,6 +57,7 @@ const HTMLContent = ({bgColor ,domContent, children, modelPath, positionY}) => {
   }
 
 export default function App() {
+
   const domContent = useRef();
   const scrollArea = useRef();
   const onScroll = (e) => (state.top.current = e.target.scrollTop);
@@ -64,6 +67,7 @@ export default function App() {
   return (
     <>
       <Header />
+      <Menu />
       <Canvas
         colorManagement
         camera={{ position: [0, 0, 120], fov: 70 }}> 
